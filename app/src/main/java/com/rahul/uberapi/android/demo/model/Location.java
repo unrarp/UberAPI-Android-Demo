@@ -8,15 +8,15 @@ public class Location extends UberModel {
         return address;
     }
 
-    float latitude;
+    double latitude;
 
-    public float getLatitude() {
+    public double getLatitude() {
         return latitude;
     }
 
-    float longitude;
+    double longitude;
 
-    public float getLongitude() {
+    public double getLongitude() {
         return longitude;
     }
 

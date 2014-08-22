@@ -45,8 +45,8 @@ public class UberAPIClient {
          */
         @GET("/products")
         void getProducts(@Header("Authorization") String authToken,
-                         @Query("latitude") float latitude,
-                         @Query("longitude") float longitude,
+                         @Query("latitude") double latitude,
+                         @Query("longitude") double longitude,
                          Callback<ProductList> callback);
 
         /**
@@ -61,8 +61,8 @@ public class UberAPIClient {
          */
         @GET("/estimates/time")
         void getTimeEstimates(@Header("Authorization") String authToken,
-                              @Query("start_latitude") float startLatitude,
-                              @Query("start_longitude") float startLongitude,
+                              @Query("start_latitude") double startLatitude,
+                              @Query("start_longitude") double startLongitude,
                               Callback<TimeEstimateList> callback);
 
         /**
@@ -84,10 +84,10 @@ public class UberAPIClient {
          */
         @GET("/estimates/price")
         void getPriceEstimates(@Header("Authorization") String authToken,
-                               @Query("start_latitude") float startLatitude,
-                               @Query("start_longitude") float startLongitude,
-                               @Query("end_latitude") float endLatitude,
-                               @Query("end_longitude") float endLongitude,
+                               @Query("start_latitude") double startLatitude,
+                               @Query("start_longitude") double startLongitude,
+                               @Query("end_latitude") double endLatitude,
+                               @Query("end_longitude") double endLongitude,
                                Callback<PriceEstimateList> callback);
 
         /**

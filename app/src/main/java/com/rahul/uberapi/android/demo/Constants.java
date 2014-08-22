@@ -18,10 +18,10 @@ public class Constants {
     public static final String BASE_URL = "https://login.uber.com/";
     public static final String SCOPES = "profile history";
     public static final String BASE_UBER_URL = "https://api.uber.com/v1/";
-    public static final float START_LATITUDE = 37.781955f;
-    public static final float START_LONGITUDE = -122.402367f;
-    public static final float END_LATITUDE = 37.744352f;
-    public static final float END_LONGITUDE = -122.416743f;
+    public static final double START_LATITUDE = 37.781955;
+    public static final double START_LONGITUDE = -122.402367;
+    public static final double END_LATITUDE = 37.744352;
+    public static final double END_LONGITUDE = -122.416743;
     public static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
 
     public static String getUberClientId(Activity activity) {
