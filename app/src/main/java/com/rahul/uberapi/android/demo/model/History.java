@@ -13,9 +13,9 @@ public class History extends UberModel {
         return uuid;
     }
 
-    float request_time;
+    long request_time;
 
-    public float getRequestTime() {
+    public long getRequestTime() {
         return request_time;
     }
 
@@ -37,9 +37,9 @@ public class History extends UberModel {
         return distance;
     }
 
-    float start_time;
+    long start_time;
 
-    public float getStart_time() {
+    public long getStart_time() {
         return start_time;
     }
 
@@ -49,9 +49,9 @@ public class History extends UberModel {
         return start_location;
     }
 
-    int end_time;
+    long end_time;
 
-    public int getEndTime() {
+    public long getEndTime() {
         return end_time;
     }
 
