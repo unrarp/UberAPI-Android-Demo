@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.rahul.uberapi.android.demo" >
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/Theme.AppCompat.Light.DarkActionBar" >
+
+        <meta-data
+            android:name="com.rahul.uberapi.android.demo.UBER_CLIENT_ID"
+            android:value="YOUR_CLIENT_ID_HERE"/>
+
+        <meta-data
+            android:name="com.rahul.uberapi.android.demo.UBER_CLIENT_SECRET"
+            android:value="YOUR_CLIENT_SECRET_HERE"/>
+
+        <meta-data
+            android:name="com.rahul.uberapi.android.demo.UBER_REDIRECT_URL"
+            android:value="YOUR_REDIRECT_URL_HERE"/>
+
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".DemoActivity"
+            android:label="@string/app_name" />
+
+        <activity
+            android:name=".EndpointActivity"
+            android:label="@string/app_name" />
+
+    </application>
+
+</manifest>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">UberAPI-Android-Demo</string>
+    <string name="demo_list_header_text">\nCongratulations! you have successfully authenticated and your token is: %s\n\nTest the following functions of the api!\n</string>
+    <string name="products">Products!</string>
+    <string name="time_estimates">Time Estimates!</string>
+    <string name="price_estimates">Price Estimates!</string>
+    <string name="history">History!</string>
+    <string name="me">Me!</string>
+    <string name="endpoint_list_header_text">Welcome to the %s endpoint!</string>
+    <string name="endpoint_list_result_text">Here is the result of a call to %s:</string>
+
+</resources>
