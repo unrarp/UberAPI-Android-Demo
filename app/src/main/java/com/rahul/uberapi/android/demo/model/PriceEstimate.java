@@ -31,6 +31,15 @@ public class PriceEstimate extends UberModel {
     }
 
     /**
+     * Localized display name of product.
+     */
+    String localized_display_name;
+
+    public String getLocalizedDisplayName() {
+        return localized_display_name;
+    }
+
+    /**
      * Display name of product.
      */
     String display_name;
