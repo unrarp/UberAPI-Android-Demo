@@ -38,7 +38,8 @@ public class DemoActivity extends ActionBarActivity implements AdapterView.OnIte
         options.add(getString(R.string.products));
         options.add(getString(R.string.time_estimates));
         options.add(getString(R.string.price_estimates));
-        options.add(getString(R.string.history));
+        options.add(getString(R.string.history_v1));
+        options.add(getString(R.string.history_v1_1));
         options.add(getString(R.string.me));
         return options;
     }

@@ -9,6 +9,7 @@ import com.rahul.uberapi.android.demo.model.TimeEstimateList;
 import com.rahul.uberapi.android.demo.model.UserActivity;
 
 import retrofit.Callback;
+import retrofit.Endpoint;
 import retrofit.RestAdapter;
 import retrofit.http.GET;
 import retrofit.http.Header;
@@ -17,11 +18,12 @@ import retrofit.http.Query;
 public class UberAPIClient {
 
     private static UberAPIInterface sUberAPIService;
+    private static UberEndPoint sEndPoint = new UberEndPoint(Constants.BASE_UBER_URL_V1, Constants.BASE_UBER_URL_V1_1);
 
-    public static UberAPIInterface getUberAPIClient() {
+    private static UberAPIInterface getUberAPIClient() {
         if (sUberAPIService == null) {
             RestAdapter restAdapter = new RestAdapter.Builder()
-                    .setEndpoint(Constants.BASE_UBER_URL)
+                    .setEndpoint(sEndPoint)
                     .setLogLevel(BuildConfig.DEBUG ? RestAdapter.LogLevel.FULL : RestAdapter.LogLevel.NONE)
                     .build();
 
@@ -29,6 +31,16 @@ public class UberAPIClient {
         }
 
         return sUberAPIService;
+    }
+
+    public static UberAPIInterface getUberV1APIClient() {
+        sEndPoint.setVersion(false);
+        return getUberAPIClient();
+    }
+
+    public static UberAPIInterface getUberV1_1APIClient() {
+        sEndPoint.setVersion(true);
+        return getUberAPIClient();
     }
 
     public interface UberAPIInterface {
@@ -120,5 +132,30 @@ public class UberAPIClient {
         @GET("/me")
         void getProfile(@Header("Authorization") String authToken,
                         Callback<Profile> callback);
+    }
+
+    private static class UberEndPoint implements Endpoint {
+
+        private final String apiUrlV1, apiUrlV11;
+        private boolean useV11 = false;
+
+        private UberEndPoint(String apiUrlV1, String apiUrlV11) {
+            this.apiUrlV1 = apiUrlV1;
+            this.apiUrlV11 = apiUrlV11;
+        }
+
+        public void setVersion(boolean useV11) {
+            this.useV11 = useV11;
+        }
+
+        @Override
+        public String getUrl() {
+            return useV11 ? apiUrlV11 : apiUrlV1;
+        }
+
+        @Override
+        public String getName() {
+            return "default";
+        }
     }
 }

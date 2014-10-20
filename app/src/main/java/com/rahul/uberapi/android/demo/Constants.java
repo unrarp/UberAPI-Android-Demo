@@ -17,7 +17,8 @@ public class Constants {
     public static final String AUTHORIZE_URL = "https://login.uber.com/oauth/authorize";
     public static final String BASE_URL = "https://login.uber.com/";
     public static final String SCOPES = "profile history_lite history";
-    public static final String BASE_UBER_URL = "https://api.uber.com/v1/";
+    public static final String BASE_UBER_URL_V1 = "https://api.uber.com/v1/";
+    public static final String BASE_UBER_URL_V1_1 = "https://api.uber.com/v1.1/";
     public static final double START_LATITUDE = 37.781955;
     public static final double START_LONGITUDE = -122.402367;
     public static final double END_LATITUDE = 37.744352;

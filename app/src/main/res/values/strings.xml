@@ -6,7 +6,8 @@
     <string name="products">Products!</string>
     <string name="time_estimates">Time Estimates!</string>
     <string name="price_estimates">Price Estimates!</string>
-    <string name="history">History!</string>
+    <string name="history_v1">History! (v1)</string>
+    <string name="history_v1_1">History! (v1.1)</string>
     <string name="me">Me!</string>
     <string name="endpoint_list_header_text">Welcome to the %s endpoint!</string>
     <string name="endpoint_list_result_text">Here is the result of a call to %s:</string>

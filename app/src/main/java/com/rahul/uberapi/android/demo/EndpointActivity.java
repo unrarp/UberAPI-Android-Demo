@@ -42,7 +42,7 @@ public class EndpointActivity extends ActionBarActivity {
         int position = getIntent().getIntExtra("position", 0);
         switch (position) {
             case 1:
-                UberAPIClient.getUberAPIClient().getProducts(getAccessToken(),
+                UberAPIClient.getUberV1APIClient().getProducts(getAccessToken(),
                         Constants.START_LATITUDE,
                         Constants.START_LONGITUDE,
                         new UberCallback<ProductList>() {
@@ -53,7 +53,7 @@ public class EndpointActivity extends ActionBarActivity {
                         });
                 break;
             case 2:
-                UberAPIClient.getUberAPIClient().getTimeEstimates(getAccessToken(),
+                UberAPIClient.getUberV1APIClient().getTimeEstimates(getAccessToken(),
                         Constants.START_LATITUDE,
                         Constants.START_LONGITUDE,
                         new UberCallback<TimeEstimateList>() {
@@ -64,7 +64,7 @@ public class EndpointActivity extends ActionBarActivity {
                         });
                 break;
             case 3:
-                UberAPIClient.getUberAPIClient().getPriceEstimates(getAccessToken(),
+                UberAPIClient.getUberV1APIClient().getPriceEstimates(getAccessToken(),
                         Constants.START_LATITUDE,
                         Constants.START_LONGITUDE,
                         Constants.END_LATITUDE,
@@ -77,18 +77,29 @@ public class EndpointActivity extends ActionBarActivity {
                         });
                 break;
             case 4:
-                UberAPIClient.getUberAPIClient().getUserActivity(getAccessToken(),
+                UberAPIClient.getUberV1APIClient().getUserActivity(getAccessToken(),
                         0,
                         5,
                         new UberCallback<UserActivity>() {
                             @Override
                             public void success(UserActivity userActivity, Response response) {
-                                setupListAdapter("history", userActivity.toString());
+                                setupListAdapter("history (v1)", userActivity.toString());
                             }
                         });
                 break;
             case 5:
-                UberAPIClient.getUberAPIClient().getProfile(getAccessToken(),
+                UberAPIClient.getUberV1_1APIClient().getUserActivity(getAccessToken(),
+                        0,
+                        5,
+                        new UberCallback<UserActivity>() {
+                            @Override
+                            public void success(UserActivity userActivity, Response response) {
+                                setupListAdapter("history (v1.1)", userActivity.toString());
+                            }
+                        });
+                break;
+            case 6:
+                UberAPIClient.getUberV1APIClient().getProfile(getAccessToken(),
                         new UberCallback<Profile>() {
                             @Override
                             public void success(Profile profile, Response response) {
